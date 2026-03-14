@@ -3,8 +3,8 @@ name: Abdul
 on: workflow_dispatch
  
 jobs:
-My-test-job: 
-    runs-on: ubuntu-latest 
-    steps:
-      - name: message
-      run: echo "Abdul"
+ abdul-job: 
+  runs-on: ubuntu-latest 
+  steps:
+   - name: message
+     run: echo "Abdul"
