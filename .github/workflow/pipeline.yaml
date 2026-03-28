@@ -1,0 +1,28 @@
+name: devOps-pipeline
+on: workflow_dispatch
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      -name: checkout code
+       uses: actions/checkout@v6
+       with:
+         ref: main
+
+         -name: installing python
+          uses: actions/setup-python@v6
+          with:
+            python-version: '3.13'
+            cache: 'pip'
+
+          -name: virtual venv
+          run: 
+            python3 -m venv venv
+            source venv/bin/active
+
+          -name: install flask
+           run: pip3 install -r requirements.txt
+
+          -name: runnimg application
+           run: python3 DevOps.py
